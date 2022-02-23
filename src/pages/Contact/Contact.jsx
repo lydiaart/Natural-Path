@@ -13,7 +13,7 @@ function Contact(){
 	const handleClick = (event)=> {
 event.preventDefault()
 console.log(state)
-window.location.href=`mailto:flowingcityloy@gmail.com?subject=Contact from ${state.firstname} ${state.lastname}&body=${state.message}`
+window.location.href=`mailto:cui4chinamedy@gmail.com?subject=Contact from ${state.firstname} ${state.lastname}&body=${state.message}`
 	}
     return (
         <>
@@ -40,13 +40,13 @@ window.location.href=`mailto:flowingcityloy@gmail.com?subject=Contact from ${sta
 												<div className="single-online-address">
 													<i className="fa fa-phone space"></i>
 
-													<span className="space">(872) 301-6235</span>
+													<span className="space">(47) 813-6268</span>
 												</div>
 												{/* <!--/.single-online-address--> */}
 
 												<div className="single-online-address">
 													<i className="fa fa-envelope-o"></i>
-													<span>flowingcityloy@gmail.com</span>
+													<span>cui4chinamed@gmail.com</span>
 												</div>
 												{/* <!--/.single-online-address--> */}
 											</div>
