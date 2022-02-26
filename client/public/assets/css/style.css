@@ -406,7 +406,7 @@ html,body{
 	z-index:1;
 }
 .single-slide-item.slide-1:before,.single-slide-item.slide-2:before{
-	background:#f7b405(115,112,215,.6);
+	background:#606c38(115,112,215,.6);
 	position:absolute;
 	left:0;
 	top:0;
@@ -442,8 +442,8 @@ html,body{
     width: 12px;
     height: 12px;
     margin:12px 10px 0 0;
-    background-color: #f7b405;
-	border:1px solid #f7b405;
+    background-color: #606c38;
+	border:1px solid #606c38;
 }
 /* .carousel-indicators */
 
@@ -916,10 +916,10 @@ a:focus.service-btn{
 	display:flex;
 	align-items:center;
 	justify-content:center;
-	background: #AE8E25;
+	background: #606c38;
 	height:50px;
 	width: 195px;
-	border:1px solid #AE8E25;
+	border:1px solid #606c38;
 	text-transform:uppercase;
 	font-family: 'Poppins', sans-serif;
 	margin-top: 3px;

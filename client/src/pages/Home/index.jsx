@@ -31,7 +31,7 @@ function Home({ setCurrentPage }) {
                                                         <form>
                                                             <div className="single-contact-btn">
                                                                 <Link to="/about">
-                                                                    <button className="contact-btn" type="submit">About Me</button>
+                                                                    <button className="contact-btn" type="submit">About</button>
                                                                 </Link>
                                                             </div>
                                                         </form>
@@ -70,7 +70,7 @@ function Home({ setCurrentPage }) {
                                                         <form>
                                                             <div className="single-contact-btn">
                                                                 <Link to="/about">
-                                                                    <button className="contact-btn" type="submit">About Me</button>
+                                                                    <button className="contact-btn" type="submit">About</button>
                                                                 </Link>
                                                             </div>
                                                         </form>
