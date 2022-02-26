@@ -213,12 +213,12 @@ html,body{
 	position: relative;
 	display: inline-block;
 	/* background: rgba(115,112,216,1); */
-	background: #AE8E25;
+	background: #283618;
 }
 
 /* sticky */
 .sticky{
-	background: #AE8E25;
+	background: #283618;
 	/* background: rgba(115,112,216,1); */
 	padding: 10px 0px 0px;
 	height:80px;
@@ -396,12 +396,12 @@ html,body{
 	 border: 1px solid #fff;
 }
 .single-slide-item.slide-1 {
-	background-image:url(../../assets/images/banner/banner1.jpg);
+	background-image:url(../../assets/images/background/Home1.jpg);
 	position:relative;
 	z-index:1;
 }
 .single-slide-item.slide-2 {
-	background-image:url(../../assets/images/banner/banner2.jpg);
+	background-image:url(../../assets/images/background/Home2.jpg);
 	position:relative;
 	z-index:1;
 }
