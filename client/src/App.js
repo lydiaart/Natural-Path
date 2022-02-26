@@ -14,11 +14,11 @@ function App() {
       <Nav />
       <Router>
 
-        <Route exact path="/"  >
+        <Route exact path="/">
           <Home />
         </Route>
         <Route exact path="/about">
-          <About/>
+          <About />
         </Route>
         <Route exact path="/services" >
           <Service />
@@ -27,7 +27,7 @@ function App() {
           <Contact />
         </Route>
       </Router>
-<Footer />
+      <Footer />
     </>
   );
 }

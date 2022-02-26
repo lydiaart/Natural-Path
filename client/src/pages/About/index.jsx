@@ -1,4 +1,5 @@
 import './index.css'
+
 function About({setCurrentPage}){
     return (
         <>
@@ -12,7 +13,7 @@ function About({setCurrentPage}){
 							<div className="about-us-txt">
 								<h2>about</h2>
 								<p>
-                                Yan Bian Acumedic is a family owned business. Ms.HongHua Cui is second generation L.Ac, OMD. It started about fourty years ago. The founder, Ms. Xu served and helped many patients with Chinese herb medicine and acupunture treatment. As many people received the good results from the treatments, the clinic expanded to the second location. Ms. Cui continued to 
+                                Yan Bian Acumedic is a family owned business. Ms.HongHua Cui is second generation L.Ac, OMD. The clinic started about fourty years ago. The founder, Ms. Xu served and helped many patients with Chinese herb medicine and acupunture treatment. As many people received the good results from the treatments, the clinic expanded to the second location. Ms. Cui continued to carry out the good spirit, helping patients to heal and recover in the most natural ways.
 								</p>
 								<div className="project-btn">
 									<a href="#" className="project-view" onClick={()=>setCurrentPage("Projects")}>Service
