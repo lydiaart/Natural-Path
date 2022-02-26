@@ -1,3 +1,5 @@
+import "./index.css";
+
 function Footer() {
     return (
         <>
@@ -7,11 +9,11 @@ function Footer() {
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="row">
-                                <div className="foot-copyright pull-left col-sm-10">
-                                    <div className="col-sm-8">
-                                        <p>
+                                <div className="foot-copyright col-sm-10">
+                                    <div className="col-sm-12 d-flex justify-content-center">
+                                        <p className="">
                                             &copy; {new Date().getFullYear()} by Nathan B |  Carter S |  Sterling W  |  Lydia L
-                                            All Rights Reserved.
+                                                  <span className="separated"> All Rights Reserved.</span>   
                                         </p>
 
                                     </div>
@@ -29,3 +31,5 @@ function Footer() {
         </>
     )
 }
+
+export default Footer;
