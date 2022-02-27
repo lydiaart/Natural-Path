@@ -841,7 +841,7 @@ a:focus.service-btn{
     transition: 0.5s ease-in-out;
 }
 .project-view:hover {
-	color: #AE8E25;
+	color: #606c38;
 	background: transparent;
 }/*project-btn*/
 
@@ -857,7 +857,7 @@ a:focus.service-btn{
 	position: relative;
 }
 .contact:before{
-	background:#AE8E25;
+	background:#606c38;
 	position:absolute;
 	left:0;
 	top:0;
@@ -1055,7 +1055,7 @@ a:focus.service-btn{
 
 .single-new-project  a.slide-btn:hover{
 	background: #f5f5fb;
-	color: #AE8E25;
+	color: #606c38;
     border: 1px solid #f5f5fb;
 }
 /*-------------------------------------
@@ -1591,8 +1591,8 @@ a:focus.service-btn{
     
     color: #fff;
     cursor: pointer;
-    background-color:#AE8E25;
-    border-color: #AE8E25;
+    background-color:#606c38;
+    border-color: #606c38;
 }
 .pagination-part .pagination>li>a,
 .pagination-part .pagination>li>span {
@@ -1834,8 +1834,8 @@ a:focus.service-btn{
     cursor: pointer;
     z-index:15;
     color: #fff;
-    background:#AE8E25;
-	border:1px solid #AE8E25;
+    background:#606c38;
+	border:1px solid #606c38;
 	border-radius:5px;
 	-webkit-transition: .5s; 
 	-moz-transition:.5s; 
@@ -1845,7 +1845,7 @@ a:focus.service-btn{
 	z-index: 2;
 }
 #scroll-Top  .return-to-top:hover {
-    background:#AE8E25;
+    background:#606c38;
     color: #fff;
 	border:1px solid #7370d8;
 	border-radius:50%;
