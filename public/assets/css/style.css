@@ -624,7 +624,7 @@ html,body{
 	font-weight: 700;
 }
 .about-us p{
-	color:#888;	
+	color: white;	
 	font-size:16px;
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.7;
@@ -1227,11 +1227,11 @@ a:focus.service-btn{
 		17. Footer- copyright
 --------------------------------------*/
 .footer-copyright {
-	background:#BBBBBF;
+	background:#283618;
 	padding: 20px 0 20px;
 }
 .foot-copyright{
-	color:#283618;
+	color:white;
 	font-size:14px;
 	font-family: 'Poppins', sans-serif;
 	text-align: center !important;

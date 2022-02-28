@@ -1,4 +1,9 @@
-#name{
-    position:relative;
-    bottom: 20px !important;
+#name {
+  position: relative;
+  bottom: 20px !important;
+}
+
+#title {
+  color: white;
+  float: left;
 }

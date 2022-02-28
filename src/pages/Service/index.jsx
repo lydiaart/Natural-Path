@@ -19,7 +19,7 @@ function Service() {
                   <div className="row">
                     <div className="col-sm-6 col-xs-12">
                       <div className="item">
-                        <Work serviceData={serviceData[4]} />
+                        <Work serviceData={serviceData[1]} />
                         {/* <!-- /.isotope-overlay --> */}
                       </div>
                       {/* <!-- /.item --> */}
@@ -27,7 +27,7 @@ function Service() {
                     {/* <!-- /.col --> */}
                     <div className="col-sm-6 col-xs-12">
                       <div className="item">
-                        <Work serviceData={serviceData[5]} />
+                        <Work serviceData={serviceData[3]} />
                         {/* <!-- /.isotope-overlay --> */}
                       </div>
                       {/* <!--/.item --> */}

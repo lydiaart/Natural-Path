@@ -11,3 +11,8 @@ footer {
         z-index: 2;
 
 }
+
+/* this does not seem to control the behavior at all widths; suspect bootstrap/class issue and-or conflict with master css */
+.footer-copyright {
+    text-align: center;
+}
