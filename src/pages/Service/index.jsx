@@ -9,34 +9,10 @@ function Service() {
         <div className="container">
           <div className="project-details">
             <div className="project-header text-left">
-              <h2>Service</h2>
-              <p>Please choose the service you wish.</p>
+              <h2>Our Offerings</h2>
+              <p>Let's begin your <i>Natural Path</i> journey</p>
             </div>
-            {/* <!--/.project-header--> */}
-            <div className="project-content">
-              <div className="gallery-content">
-                <div className="isotope">
-                  <div className="row">
-                    <div className="col-sm-6 col-xs-12">
-                      <div className="item">
-                        <Work serviceData={serviceData[1]} />
-                        {/* <!-- /.isotope-overlay --> */}
-                      </div>
-                      {/* <!-- /.item --> */}
-                    </div>
-                    {/* <!-- /.col --> */}
-                    <div className="col-sm-6 col-xs-12">
-                      <div className="item">
-                        <Work serviceData={serviceData[3]} />
-                        {/* <!-- /.isotope-overlay --> */}
-                      </div>
-                      {/* <!--/.item --> */}
-                    </div>
-                    {/* <!-- /.col --> */}
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>

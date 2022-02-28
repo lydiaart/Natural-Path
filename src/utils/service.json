@@ -1,20 +1,44 @@
 [
     {
-        "image_path": "assets/images/project/project1.png", 
-        "alt": "Provider 1",
+        "image_path": "assets/images/project/project2.png", 
+        "alt": "portfolio image",
         "live_link": "https://emergency-center.herokuapp.com/",
-        "title": "Provider 1"
+        "title": "Emergency Center",
+        "github": "https://github.com/flowingcityloy/Emergency-Center"
     },
     {
-        "image_path": "assets/images/project/project2.png", 
-        "alt": "Provider 2",
-        "live_link": "https://emergency-center.herokuapp.com/",
-        "title": "Provider 2"
+        "image_path": "assets/images/project/project1.png", 
+        "alt": "portfolio image",
+        "live_link": "https://flowingcityloy.github.io/playlist/",
+        "title": "Play List",
+        "github":"https://github.com/flowingcityloy/playlist"
     },
     {
         "image_path": "assets/images/project/project3.png", 
-        "alt": "Proivder 3",
-        "live_link": "https://emergency-center.herokuapp.com/",
-        "title": "Provider 3"
+        "alt": "portfolio image",
+        "live_link": "https://flowingcityloy.github.io/Work-Day-Scheduler/",
+        "title": "Work Day Scheduler",
+        "github":"https://github.com/flowingcityloy/Work-Day-Scheduler"
+    },
+    {
+        "image_path": "assets/images/project/project6.png", 
+        "alt": "portfolio image",
+        "live_link": "https://flowingcityloy.github.io/Weather-Dashboard/",
+        "title": "Weather Dashboard",
+        "github":"https://github.com/flowingcityloy/Weather-Dashboard"
+    },  
+    {
+        "image_path": "assets/images/project/project4.png" , 
+        "alt": "portfolio image",
+        "live_link": "https://flowingcityloy.github.io/Coding-Quiz-Challenge/",
+        "title": "Coding Quiz Challenge",
+        "github":"https://github.com/flowingcityloy/Coding-Quiz-Challenge"
+    },
+    {
+        "image_path": "assets/images/project/project5.png" , 
+        "alt": "portfolio image",
+        "live_link": "https://flowingcityloy.github.io/Password-Generator/",
+        "title": "Password Generator",
+        "github":"https://github.com/flowingcityloy/Password-Generator"
     }
 ]
