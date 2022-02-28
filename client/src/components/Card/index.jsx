@@ -1,14 +1,25 @@
-function Card(){
+import { Redirect } from "react-router-dom";
+
+function Card() {
     return (
         <>
-         <div class="card">
-            <img class="card-img-top" src="//placeimg.com/280/180/tech" alt="Card image cap" />
-            <div class="card-body">
-               <h5 class="card-title border-bottom pb-3">Card title <a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a></h5>
-               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-               <a href="#" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+            <div class="col-md-10 m-3">
+                <div class="card" style={{backgroundColor:"#606c38",borderRadius:"10px",boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",height:"350px"}}>
+
+                    {/* <!--Card image--> */}
+                    <img class="img-fluid" src="assets/images/background/product.png" alt="Card image cap" style={{borderRadius:"10px 10px 0 0"}}/>
+
+                    {/* <!--Card content--> */}
+                    <div class="card-body">
+                        {/* <!--Title--> */}
+                        <h4 class="card-title" style={{padding:"10px", color:"white"}}>Product Name</h4>
+                        {/* <!--Text--> */}
+                        <p class="card-text" style={{padding:"10px", color:"white"}}>Brief description of the product.</p>
+                        <a href="#" class="btn text-white" style={{color:"white", paddingTop:"60px", fontSize:"14px"}}><i class="fa-solid fa-plus" style={{fontSize:"20px"}}></i>Add to cart</a>
+                    </div>
+
+                </div>
             </div>
-         </div>
         </>
     )
 }

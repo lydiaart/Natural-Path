@@ -6,7 +6,7 @@ function Product() {
             <div className="container m-3">
                 <div className="row">
                     <div className="col-md-12">
-                        <h2> <b>Products</b></h2>
+                        <h2> OnLine <b>Products</b></h2>
                         <div id="myCarousel" className="carousel slide" data-ride="carousel" data-interval="0">
                             {/* <!-- Carousel indicators --> */}
                             <ol className="carousel-indicators">
