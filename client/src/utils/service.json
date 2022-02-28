@@ -30,15 +30,13 @@
     {
         "image_path": "assets/images/project/project4.png" , 
         "alt": "portfolio image",
-        "live_link": "https://flowingcityloy.github.io/Coding-Quiz-Challenge/",
-        "title": "Acupuncture",
-        "github":"https://github.com/flowingcityloy/Coding-Quiz-Challenge"
+        "live_link": "/Scheduler",
+        "title": "Acupuncture"
     },
     {
         "image_path": "assets/images/project/project5.png" , 
         "alt": "portfolio image",
-        "live_link": "https://flowingcityloy.github.io/Password-Generator/",
-        "title": "Herb Medicine",
-        "github":"https://github.com/flowingcityloy/Password-Generator"
+        "live_link": "/Scheduler",
+        "title": "Herb Medicine"
     }
 ]

@@ -4,7 +4,7 @@ function Footer() {
     return (
         <>
             {/*<!--footer copyright start--> */}
-            <footer className="footer-copyright">
+            <footer className="footer-copyright top-footer">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12">

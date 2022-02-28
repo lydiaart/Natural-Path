@@ -8,11 +8,12 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import MyAccount from './pages/SignUpLogIn';
 import Footer from './components/Footer';
+import Scheduler from './pages/Scheduler';
 
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Nav />
       <Router>
 
@@ -31,9 +32,12 @@ function App() {
         <Route exact path="/signuplogin">
         <MyAccount />
         </Route>
+        <Route exact path="/scheduler">
+          <Scheduler />
+        </Route>
       </Router>
       <Footer />
-    </>
+    </div>
   );
 }
 

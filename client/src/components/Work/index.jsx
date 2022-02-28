@@ -14,15 +14,6 @@ function Work({serviceData}) {
                 </h3>
                 <br />
 
-                <a href={serviceData.github} target="_blank">
-
-                    <i className="fab fa-github-alt"></i>
-
-                </a>
-
-
-
-
             </div>
         </>
     )

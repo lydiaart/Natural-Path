@@ -54,6 +54,7 @@ body{
     max-width:1920px;
     margin:0 auto;
 	overflow-x:hidden;
+ 
 }
 
 a,a:hover,a:active,a:focus {
@@ -398,11 +399,13 @@ html,body{
 .single-slide-item.slide-1 {
 	background-image:url(../../assets/images/background/Home1.jpg);
 	position:relative;
+	height:960px;
 	z-index:1;
 }
 .single-slide-item.slide-2 {
 	background-image:url(../../assets/images/background/Home2.jpg);
 	position:relative;
+	height:960px;
 	z-index:1;
 }
 .single-slide-item.slide-1:before,.single-slide-item.slide-2:before{
@@ -613,6 +616,7 @@ html,body{
 .about-us{
 	background: #f9faff;
 	padding: 120px 0 175px;
+	height:960px;
 }
 .about-us-txt{
 	margin-top: 103px;
@@ -783,7 +787,7 @@ a:focus.service-btn{
 	position:absolute;
 	height:100%;
 	width:100%;
-	background: #AE8E25;
+	background: #606c38;
 	display:flex;
 	align-items:center;
 	text-transform: capitalize;
