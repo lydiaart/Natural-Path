@@ -1,0 +1,27 @@
+.contact:before{
+    background-color:white!important;
+
+}
+.section-header.contact-head h2, 
+.section-header.contact-head p ,
+.contact-office-address h3 ,
+.contact-form h3,
+.fa-phone:before,
+.single-online-address span ,
+.fa-envelope-o:before
+ {
+    color: #1a1a2a !important; 
+}
+
+ 
+.contact-form .form-control {
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.space{
+    padding-top: 30px !important;
+}
+
+footer{
+    display:block;
+}
