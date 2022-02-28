@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Scheduler from './pages/Scheduler';
 import Profile from './pages/Profile';
 import Cart from './pages/Cart';
+import Product from './pages/Product';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route exact path="/cart">
           <Cart />
+        </Route>
+        <Route exact path="/product">
+          <Product />
         </Route>
       </Router>
       <Footer />
