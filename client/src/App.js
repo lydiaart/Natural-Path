@@ -9,6 +9,7 @@ import About from './pages/About';
 import MyAccount from './pages/SignUpLogIn';
 import Footer from './components/Footer';
 import Scheduler from './pages/Scheduler';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <Route exact path="/scheduler">
           <Scheduler />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
       </Router>
       <Footer />
