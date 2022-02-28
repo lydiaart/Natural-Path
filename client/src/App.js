@@ -10,6 +10,7 @@ import MyAccount from './pages/SignUpLogIn';
 import Footer from './components/Footer';
 import Scheduler from './pages/Scheduler';
 import Profile from './pages/Profile';
+import Cart from './pages/Cart';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route exact path="/profile">
           <Profile />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
         </Route>
       </Router>
       <Footer />
