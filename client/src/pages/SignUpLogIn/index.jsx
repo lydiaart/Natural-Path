@@ -65,6 +65,17 @@ function MyAccount() {
                                             {/* <!--/.col--> */}
                                             <div className="col-sm-10 col-xs-12 col-centered ">
                                                 <div className="form-group">
+                                                    <input type="password" value={state.signUpPassword} onChange={(event) => setState({ ...state, signUpPassword: event.target.value })} className="form-control" id="password"
+                                                        placeholder="Password" name="password" />
+                                                </div>
+                                                {/* <!--/.form-group--> */}
+                                            </div>
+                                            {/* <!--/.col--> */}
+                                        </div>
+                                        <div className="row">
+                                            {/* <!--/.col--> */}
+                                            <div className="col-sm-10 col-xs-12 col-centered ">
+                                                <div className="form-group">
                                                     <input type="text" value={state.phone} onChange={(event) => setState({ ...state, phone: event.target.value })} className="form-control" id="phone"
                                                         placeholder="Phone" name="phone" />
                                                 </div>
@@ -109,7 +120,7 @@ function MyAccount() {
                                             {/* <!--/.col--> */}
                                             <div className="col-sm-10 col-xs-12 col-centered ">
                                                 <div className="form-group">
-                                                    <input type="text" value={state.password} onChange={(event) => setState({ ...state, password: event.target.value })} required className="form-control" id="password"
+                                                    <input type="password" value={state.password} onChange={(event) => setState({ ...state, password: event.target.value })} required className="form-control" id="password"
                                                         placeholder="Password" name="password" />
                                                 </div>
                                                 {/* <!--/.form-group--> */}
