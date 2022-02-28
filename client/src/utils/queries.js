@@ -25,27 +25,29 @@ export const QUERY_CHECKOUT = gql`
 `;
 
 export const QUERY_ALL_PRODUCTS = gql`
-  {
-    products {
+  query products($category:ID, $name: String) {
+  products(category: $category, name: $name){
+    _id
+    name
+    description
+    image
+    quantity
+    price
+    category{
       _id
       name
-      description
-      price
-      quantity
-      category {
-        name
-      }
     }
   }
+}
 `;
 
 export const QUERY_CATEGORIES = gql`
-  {
-    categories {
-      _id
-      name
-    }
-  }
+query categories{
+categories {
+  _id
+  name
+}
+}
 `;
 
 export const QUERY_USER = gql`
