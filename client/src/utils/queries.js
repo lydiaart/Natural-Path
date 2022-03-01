@@ -78,3 +78,24 @@ export const QUERY_USER = gql`
   } 
 }
 `;
+
+export const QUERY_ORDER = gql`
+query order($_id:ID!){
+  order(_id:$_id){
+    _id
+    purchaseDate
+    products{
+      _id
+      name
+      description
+      image
+      quantity
+      price
+      category{
+        _id
+        name
+      }
+    }
+  }
+}
+`
