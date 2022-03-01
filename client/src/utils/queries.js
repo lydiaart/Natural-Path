@@ -18,11 +18,11 @@ query product($_id:ID!){
 `;
 
 export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
-    }
+query checkout($products: [ID]!){
+  checkout(products:$products){
+    session
   }
+}
 `;
 
 export const QUERY_ALL_PRODUCTS = gql`
