@@ -1,70 +1,101 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_PRODUCTS = gql`
-  query getProducts($category: ID) {
-    products(category: $category) {
+query product($_id:ID!){
+  product(_id:$_id){
+    _id
+    name
+    description
+    image
+    quantity
+    price
+    category{
       _id
       name
-      description
-      price
-      quantity
-      image
-      category {
-        _id
-      }
     }
   }
+}
 `;
 
 export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
-    }
+query checkout($products: [ID]!){
+  checkout(products:$products){
+    session
   }
+}
 `;
 
 export const QUERY_ALL_PRODUCTS = gql`
-  {
-    products {
+  query products($category:ID, $name: String) {
+  products(category: $category, name: $name){
+    _id
+    name
+    description
+    image
+    quantity
+    price
+    category{
+      _id
+      name
+    }
+  }
+}
+`;
+
+export const QUERY_CATEGORIES = gql`
+query categories{
+categories {
+  _id
+  name
+}
+}
+`;
+
+export const QUERY_USER = gql`
+  query user{
+  user{
+    _id
+  firstName
+  lastName
+  email
+  phone
+  orders{
+    _id
+    purchaseDate
+    products{
       _id
       name
       description
-      price
+      image
       quantity
-      category {
+      price
+      category{
+        _id
         name
       }
     }
   }
+  } 
+}
 `;
 
-export const QUERY_CATEGORIES = gql`
-  {
-    categories {
+export const QUERY_ORDER = gql`
+query order($_id:ID!){
+  order(_id:$_id){
+    _id
+    purchaseDate
+    products{
       _id
       name
-    }
-  }
-`;
-
-export const QUERY_USER = gql`
-  {
-    user {
-      firstName
-      lastName
-      orders {
+      description
+      image
+      quantity
+      price
+      category{
         _id
-        purchaseDate
-        products {
-          _id
-          name
-          description
-          price
-          quantity
-          image
-        }
+        name
       }
     }
   }
-`;
+}
+`
