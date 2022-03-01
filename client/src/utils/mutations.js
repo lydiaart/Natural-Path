@@ -73,3 +73,20 @@ mutation updateUser($firstName: String, $lastName: String, $email: String, $pass
   }
 }
 `
+
+export const UPDATE_PRODUCT = gql`
+mutation updateProduct($_id:ID! $quantity: Int!){
+  updateProduct(_id:$_id, quantity:$quantity){
+    _id
+    name
+    description
+    image
+    quantity
+    price
+    category{
+      _id
+      name
+    }
+  }
+}
+`
