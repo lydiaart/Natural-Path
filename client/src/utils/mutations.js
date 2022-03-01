@@ -12,21 +12,24 @@ mutation login($email:String!, $password: String!){
 `;
 
 export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
-      purchaseDate
-      products {
+mutation addOrder($products:[ID]!){
+  addOrder(products:$products){
+    _id
+    purchaseDate
+    products{
+      _id
+      name
+      description
+      image
+      quantity
+      price
+      category{
         _id
         name
-        description
-        price
-        quantity
-        category {
-          name
-        }
       }
     }
   }
+}
 `;
 
 export const ADD_USER = gql`
@@ -42,3 +45,31 @@ export const ADD_USER = gql`
 
 
 `;
+
+export const UPDATE_USER = gql`
+mutation updateUser($firstName: String, $lastName: String, $email: String, $password:String){
+  updateUser(firstName:$firstName, lastName:$lastName, email:$email, password:$password){
+    _id
+    firstName
+    lastName
+    email
+    phone
+    orders{
+      _id
+      purchaseDate
+      products{
+        _id
+        name
+        description
+        image
+        quantity
+        price
+        category{
+          _id
+          name
+        }
+      }
+    }
+  }
+}
+`
