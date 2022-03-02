@@ -12,6 +12,8 @@ import Scheduler from './pages/Scheduler';
 import Profile from './pages/Profile';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
+import EditProfile from './pages/EditProfile';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -22,7 +24,6 @@ import { setContext } from '@apollo/client/link/context';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
-import EditProfile from './pages/EditProfile';
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
