@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 require("dotenv").config();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/natural-path', {
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost:27017/natural-path",
+ {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
