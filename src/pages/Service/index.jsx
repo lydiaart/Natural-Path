@@ -5,26 +5,37 @@ function Service() {
   return (
     <>
       {/* <!--project start--> */}
+      {/* column */}
       <section id="project" className="project">
-        <div className="container">
-          <div className="project-details">
-            <div className="project-header text-left">
-              <h2>Our Offerings</h2>
-              <p>
-                Let's begin your <i>Natural Path</i> journey
-              </p>
+        <article>
+          {/* row */}
+          <div className="container project-details project-header text-left">
+            <h2>Our Offerings</h2>
+            <p>
+              Let's begin your <i>Natural Path</i> journey
+            </p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <article>
+          <div class="container">
+            <div class="row justify-content-around">
+              <div class="col">One of three columns</div>
+              <div class="col">One of three columns</div>
+              <div class="col">One of three columns</div>
             </div>
           </div>
-          {/* one row with three boxes */}
-          {/* <!--/.row--> */}
-          <div class="container"></div>
-          <div class="project-details">
-            <p>Provider 1</p>
+        </article>
+        <article>
+          <div class="container">
+            <div class="row justify-content-around">
+              <div class="col">One of three columns</div>
+              <div class="col">One of three columns</div>
+              <div class="col">One of three columns</div>
+            </div>
           </div>
-            <div class="column"></div>
-            <div class="column"></div>
-          {/* one row with a select feature */}
-        </div>
+        </article>
       </section>
     </>
   );

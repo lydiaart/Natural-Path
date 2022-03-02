@@ -12,7 +12,7 @@ function Footer() {
                 <div className="foot-copyright col-sm-10">
                   <div className="col-sm-12 d-flex">
                     <p className="">
-                      <div>| Nathan B | Lydia L | Carter S | Sterling W |</div>
+                      <div>Nathan B | Lydia L | Carter S | Sterling W</div>
                       <div>
                         <span className="separated">
                           {" "}
