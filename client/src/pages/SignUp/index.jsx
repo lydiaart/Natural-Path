@@ -183,5 +183,4 @@ function SignUp() {
    
   );
 }
-console.log(SignUp)
 export default SignUp;
