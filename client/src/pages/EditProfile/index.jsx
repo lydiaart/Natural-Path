@@ -1,28 +1,37 @@
 import './index.css';
-import { useState } from "react"
+import { useState, useEffect } from "react";
+import Auth from "../../utils/auth";
+import { UPDATE_USER }  from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
 function EditProfile() {
     const [state, setState] = useState({
-        firstname: "",
-        lastname: "",
+        firstName:  "",
+        lastName: "",
         email: "",
-        phone: "",
-        message: ""
+        phone: "" 
     })
-    const handleSignUp = (event) => {
+    console.log(state)
+   const [ updateUser ] = useMutation(UPDATE_USER)
+    const handleSignUp = async(event) => {
         event.preventDefault()
         console.log(state)
-        window.location.href = `mailto:cui4chinamed@gmail.com?subject=Contact from ${state.firstname} ${state.lastname}&body=${state.message}`
+        const {data} = await updateUser({
+            variables: { 
+                 ...state
+            }
+        }) 
+        // window.location.href =  "/profile"
     }
     return(
         <>
      <div className="container col-centered">
             <div className="row">
-                <div className="col-6">
+                <div className="col-sm-10 col-centered">
                     <div className="single-contact-box">
                         <div className="contact-form">
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <h3>Member Sign Up</h3>
+                                    <h3>Edit Profile</h3>
                                     <form onSubmit={handleSignUp} className="form">
                                         <div className="row">
                                             <div className="col-sm-10 col-xs-12 col-centered">
@@ -52,7 +61,7 @@ function EditProfile() {
                                         <div className="row">
                                             <div className="col-sm-10 col-xs-12 col-centered ">
                                                 <div className="form-group">
-                                                    <input type="email" value={state.signUpEmail} onChange={(event) => setState({ ...state, signUpEmail: event.target.value })} className="form-control" id="email"
+                                                    <input type="email" value={state.email} onChange={(event) => setState({ ...state, email: event.target.value })} className="form-control" id="email"
                                                         placeholder="email" name="email" />
                                                 </div>
                                                 {/* <!--/.form-group--> */}
@@ -64,7 +73,7 @@ function EditProfile() {
                                             {/* <!--/.col--> */}
                                             <div className="col-sm-10 col-xs-12 col-centered ">
                                                 <div className="form-group">
-                                                    <input type="password" value={state.signUpPassword} onChange={(event) => setState({ ...state, signUpPassword: event.target.value })} className="form-control" id="password"
+                                                    <input type="password" value={state.password} onChange={(event) => setState({ ...state, password: event.target.value })} className="form-control" id="password"
                                                         placeholder="Password" name="password" />
                                                 </div>
                                                 {/* <!--/.form-group--> */}
@@ -86,7 +95,7 @@ function EditProfile() {
                                         <div className="row">
                                             <div className="col-sm-10 col-centered ">
                                                 <div className="single-contact-btn m-3">
-                                                    <button className="contact-btn" type="submit" >Sign Up</button>
+                                                    <button className="contact-btn" type="submit" >Save</button>
                                                 </div>
                                                 {/* <!--/.single-single-contact-btn--> */}
                                             </div>
