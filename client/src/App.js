@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Nav from './components/Nav';
 import Service from './pages/Service';
 import Contact from './pages/Contact';
+
+
 import About from './pages/About';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
@@ -57,10 +59,10 @@ function App() {
         <Route exact path="/contact">
           <Contact />
         </Route>
-        <Route exact path="/SignUp">
+        <Route exact path="/signUp">
           <SignUp />
         </Route>
-        <Route exact path="/Login">
+        <Route exact path="/login">
           <Login />
         </Route>
         <Route exact path="/scheduler">

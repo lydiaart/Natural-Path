@@ -47,15 +47,19 @@ function Nav() {
                   <li>
                     <a href="/product">Products</a>
                   </li>
+                 
                   <li>
                     <a href="/contact">Contact</a>
                   </li>
                   <li>
                     <a href="/SignUp">Sign Up</a>
                   </li>
-                  
-                  <script>
-                    {function requireAuth(nextState, replace, next) {
+                  <li>
+                    <a href="/Login">Login</a>
+                  </li>
+                  <li>
+                    </li>
+                    <li> {function requireAuth(nextState, replace, next) {
                       if (!Auth.loggedIn) {
                         replace({
                           pathname: "/Profile",
@@ -63,19 +67,8 @@ function Nav() {
                         });
                       }
                       next();
-                    }
-                }
-                  </script>
-                  {Auth.loggedIn() ? (
-                    <li>
-                      <a onClick={() => Auth.logout()}>Log Out</a>
+                    }}
                     </li>
-                  ) : (
-                    <li>
-                      <a href="/Login">Login</a>
-                    </li>
-                  )}
-
                   <li>
                     <a href="/cart">
                       <i class="fa-solid fa-cart-plus"></i> (1) Cart

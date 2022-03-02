@@ -161,7 +161,6 @@ function SignUp() {
                         <Link to={{ pathname: "/Login"}} ><button 
                           className="contact-btn" 
                           type="submit"
-                          onClick={() => handleSignUp()}
                           >Sign Up
                           </button></Link>
                         </div>
@@ -181,7 +180,8 @@ function SignUp() {
         </div>
       </div>
     </div>
+   
   );
 }
-
+console.log(SignUp)
 export default SignUp;
