@@ -40,7 +40,7 @@ function EditProfile() {
                                                         ...state,
                                                         firstName: event.target.value
                                                     })} required className="form-control" id="firstName"
-                                                        placeholder="First Name" name="firstName" />
+                                                        placeholder={Auth.getProfile().firstName} name="firstName" />
                                                 </div>
                                                 {/* <!--/.form-group--> */}
                                             </div>
