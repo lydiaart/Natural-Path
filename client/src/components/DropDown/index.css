@@ -1,5 +1,15 @@
-btn-info {
+.btn-info {
   color: #fff;
   background-color: #606c38 !important;
   border-color: #606c38 !important;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #606c38 !important;
+  outline: 0;
+}
+.form-control {
+  
 }

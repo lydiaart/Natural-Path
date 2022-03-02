@@ -16,12 +16,6 @@ function DropDown() {
                         )
                     })}
                 </optgroup>
-
-                <optgroup label="Category">
-                    <option>Skin Care Products</option>
-                    <option>Herb Teas</option>
-                    <option>Ointments</option>
-                </optgroup>
                 
             </select>
 
