@@ -3,7 +3,7 @@ function Profile() {
         <>
 
             <div class="container emp-profile">
-                <form method="post">
+                <form method="get"  action="/editprofile">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile-img">
@@ -13,7 +13,9 @@ function Profile() {
                                     <input type="file" name="file" />
                                 </div>
                                 <div class="col-md-12">
+                                   
                             <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                             
                         </div>
                             </div>
                         </div>
