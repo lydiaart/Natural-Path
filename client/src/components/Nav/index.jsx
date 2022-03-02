@@ -35,8 +35,8 @@ function Nav() {
                                     <li><a href="/services">Service</a></li>
                                     <li><a href="/product">Products</a></li>
                                     <li><a href="/contact">Contact</a></li>
-                                    <li><a href="/profile">Profile</a></li>
-                                    {Auth.loggedIn()? (  <li><a  onClick={()=>Auth.logout()}>Log Out</a></li>  ):(  <li><a href="/SignUpLogin">My Account</a></li>  )}
+                                  
+                                    {Auth.loggedIn()? ( <>  <li><a href="/profile">Profile</a></li>  <li><a  onClick={()=>Auth.logout()}>Log Out</a></li> </> ):(  <li><a href="/SignUpLogin">My Account</a></li>  )}
                                    
                                     <li><a href="/cart"><i class="fa-solid fa-cart-plus"></i> (1) Cart</a></li>               
                                 </ul>
