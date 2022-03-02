@@ -1,73 +1,35 @@
-import Card from '../../components/Card';
-import DropDown from '../../components/DropDown';
 
+import DropDown from '../../components/DropDown';
+import { QUERY_CATEGORIES } from "../../utils/queries";
+import { useQuery } from "@apollo/client";
+import {useState,useEffect} from 'react'
+import ProductImage from '../../components/ProductImage'
 function Product() {
+    const { loading, data } = useQuery(QUERY_CATEGORIES)
+    const categories = data?.categories || []
+    
+    const [category,setCategory] = useState("")
+   
+  useEffect(()=>{
+      if(categories.length>0){
+        setCategory(categories[0]._id)
+      }
+    
+  },[loading])
+    
+
+
     return (
         <>
             <div className="container m-3">
                 <div className="row">
                     <div className="col-md-12">
                         <h2> OnLine <b>Products</b></h2>
-<br/>
-                        <DropDown />
-
-                        <div id="myCarousel" className="carousel slide" data-ride="carousel" data-interval="0">
-                            {/* <!-- Carousel indicators --> */}
-                            <ol className="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
-                            {/* <!-- Wrapper for carousel items --> */}
-                            <div className="carousel-inner">
-                                <div className="item carousel-item active">
-                                    <div className="row">
-                                        <div className="col-sm-4">
-
-                                            <Card />
-
-                                        </div>
-                                        <div className="col-sm-4">
-
-                                            <Card />
-
-                                        </div>
-                                        <div className="col-sm-4">
-
-                                            <Card />
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className="item carousel-item">
-                                    <div className="row">
-                                        <div className="col-sm-4"> 
-
-                                            <Card />
-
-                                        </div>
-                                        <div className="col-sm-4">
-
-                                            <Card />
-
-                                        </div>
-                                        <div className="col-sm-4">
-
-                                        <Card />
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!-- Carousel controls --> */}
-                            <a className="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                <i className="fa fa-angle-left"></i>
-                            </a>
-                            <a className="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                                <i className="fa fa-angle-right"></i>
-                            </a>
-                        </div>
+                        <br />
+                        <DropDown setCategory={setCategory} categories={categories} loading={loading}  />
+ 
+                       <ProductImage category={category}/>
+                 
                     </div>
                 </div>
             </div>
