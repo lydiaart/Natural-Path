@@ -1,51 +1,91 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      user {
-        _id
-      }
+mutation login($email:String!, $password: String!){
+  login(email:$email, password:$password){
+    token 
+    user{
+      email
     }
   }
+}
+`;
+export const ADD_USER = gql`
+ mutation addUser($firstName: String!, $lastName: String!, $email: String!, $password: String!, $phone: String!)
+{
+  addUser(firstName:$firstName, lastName:$lastName, email:$email, password:$password, phone:$phone){
+    token
+    user{
+      email
+    }
+  }
+}
+
+
 `;
 
 export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
+mutation addOrder($products:[ID]!){
+  addOrder(products:$products){
+    _id
+    purchaseDate
+    products{
+      _id
+      name
+      description
+      image
+      quantity
+      price
+      category{
+        _id
+        name
+      }
+    }
+  }
+}
+`;
+
+export const UPDATE_USER = gql`
+mutation updateUser($firstName: String, $lastName: String, $email: String, $password:String){
+  updateUser(firstName:$firstName, lastName:$lastName, email:$email, password:$password){
+    _id
+    firstName
+    lastName
+    email
+    phone
+    orders{
+      _id
       purchaseDate
-      products {
+      products{
         _id
         name
         description
-        price
+        image
         quantity
-        category {
+        price
+        category{
+          _id
           name
         }
       }
     }
   }
-`;
+}
+`
 
-export const ADD_USER = gql`
-  mutation addUser(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
-  ) {
-    addUser(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      password: $password
-    ) {
-      token
-      user {
-        _id
-      }
+export const UPDATE_PRODUCT = gql`
+mutation updateProduct($_id:ID! $quantity: Int!){
+  updateProduct(_id:$_id, quantity:$quantity){
+    _id
+    name
+    description
+    image
+    quantity
+    price
+    category{
+      _id
+      name
     }
   }
-`;
+}
+`
