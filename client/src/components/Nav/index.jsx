@@ -127,7 +127,7 @@ function Nav() {
                       <a href="/contact">Contact</a>
                     </li>
                     <li>
-                      <a href="/SignUp">SignUp</a>
+                      <a href="/SignUp">Sign Up</a>
                     </li>
                     <li>
                       <a href="/Login">Login</a>
