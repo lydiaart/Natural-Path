@@ -24,19 +24,18 @@ const SignUp = () => {
       });
     };
   
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-  
+   async function handleFormSubmit(e){
+      e.preventDefault();
+   
       try {
         const { data } = await addUser({
           variables: { ...formState },
         });
   
         Auth.login(data.addUser.token);
-      } catch (e) {
-        console.error(e);
-      }
-    };
+      } catch (e){console.log(e)}
+    }
+    
   
     return (
       <main>
