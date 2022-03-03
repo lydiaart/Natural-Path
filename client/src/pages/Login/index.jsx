@@ -26,7 +26,6 @@ const Login = () => {
           variables: { ...formState },
           
         });
-        console.log(data)
 
         Auth.login(data.login.token);
       } catch (e) {

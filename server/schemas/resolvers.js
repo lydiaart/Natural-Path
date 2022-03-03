@@ -97,7 +97,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
 
@@ -122,8 +121,7 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-console.log(email)
-console.log("made it")
+
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
       }
