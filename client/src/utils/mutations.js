@@ -46,8 +46,8 @@ mutation addOrder($products:[ID]!){
 `;
 
 export const UPDATE_USER = gql`
-mutation updateUser($firstName: String, $lastName: String, $email: String, $password:String){
-  updateUser(firstName:$firstName, lastName:$lastName, email:$email, password:$password){
+mutation updateUser($firstName: String, $lastName: String, $email: String, $password:String, $phone:String){
+  updateUser(firstName:$firstName, lastName:$lastName, email:$email, password:$password, phone:$phone){
     _id
     firstName
     lastName
