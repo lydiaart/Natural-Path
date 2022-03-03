@@ -20,7 +20,7 @@ function EditProfile() {
                  ...state
             }
         }) 
-        // window.location.href =  "/profile"
+         window.location.href =  "/signuplogin"
     }
     return(
         <>
@@ -68,18 +68,7 @@ function EditProfile() {
                                             </div>
 
                                         </div>
-                                        {/* <!--/.row--> */}
-                                        <div className="row">
-                                            {/* <!--/.col--> */}
-                                            <div className="col-sm-10 col-xs-12 col-centered ">
-                                                <div className="form-group">
-                                                    <input type="password" value={state.password} onChange={(event) => setState({ ...state, password: event.target.value })} className="form-control" id="password"
-                                                        placeholder="Password" name="password" />
-                                                </div>
-                                                {/* <!--/.form-group--> */}
-                                            </div>
-                                            {/* <!--/.col--> */}
-                                        </div>
+                                      
                                         <div className="row">
                                             {/* <!--/.col--> */}
                                             <div className="col-sm-10 col-xs-12 col-centered ">
