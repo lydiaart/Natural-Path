@@ -1,18 +1,34 @@
-function DropDown() {
+ 
+import './index.css';
+import {useState} from 'react' 
+function DropDown({categories,setCategory}) {
+    
+
+ 
     return (
         <>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Select a category
-                    
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Skin Care Products</a></li>
-                    <li><a href="#">Herb Teas</a></li>
-                    <li><a href="#">Natural Ointments</a></li>
-                </ul>
-            </div>
+
+        <select onChange={(event)=>setCategory(event.target.value)}  >
+             { categories.map((category, i) => {
+                        return (
+                            <option key={i} value={category._id}> {category.name}</option>
+                        )
+                    })}
+        </select>
+            {/* <select className="selectpicker" onChange={handleClick} data-style="btn-info" multiple data-max-options="3" data-live-search="true">
+                <optgroup label="Category">
+                    { list.map((category, i) => {
+                        return (
+                            <option key={i} value={category._id}> {category.name}</option>
+                        )
+                    })}
+                </optgroup>
+
+                 
+            </select> */}
+
+
+
         </>
     )
 

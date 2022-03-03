@@ -14,6 +14,8 @@ import Scheduler from './pages/Scheduler';
 import Profile from './pages/Profile';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
+import EditProfile from './pages/EditProfile';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -44,9 +46,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <div className="App">
-      <Nav />
+     
       <Router>
-
+      <Nav />
         <Route exact path="/">
           <Home />
         </Route>
@@ -76,6 +78,9 @@ function App() {
         </Route>
         <Route exact path="/product">
           <Product />
+        </Route>
+        <Route exact path="/editprofile">
+          <EditProfile />
         </Route>
       </Router>
       <Footer />
