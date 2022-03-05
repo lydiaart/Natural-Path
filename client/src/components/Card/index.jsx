@@ -14,6 +14,7 @@ console.log(product);
                 quantity: 1
              }
           })
+          window.location.reload()
     }
     return (
         <>
