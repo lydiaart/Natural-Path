@@ -95,7 +95,7 @@ const resolvers = {
         });
         return user
       }
-      throw new AuthenticatonError('Not logged in');
+      throw new AuthenticationError('Not logged in');
     }
   },
   Mutation: {
@@ -156,7 +156,28 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addCart: async (parent, { name, image, price, quanity }, context) => {
+      if (context.user) {
+        const cart = await Cart.create({ name, image, price, quantity })
+        const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { carts: { _id: cart._id } } })
+
+        return user
+
+      }
+      throw new AuthenticationError('Not logged in')
+    },
+    removeCart: async (parent, { _id }, context) => {
+      if (context.user) {
+        const user = await User.findOneAndUpdate({ _id: context.user._id },
+          { $pull: { carts: { _id } } })
+
+        return user
+
+      }
+      throw new AuthenticationError('Not logged in')
     }
+
   }
 };
 
