@@ -116,6 +116,16 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    deleteUser: async (parent, args, context) => {
+      if (context.user) {
+        console.log(args)
+        const result=await User.findByIdAndDelete({_id: context.user._id})
+
+        return "" ;
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 

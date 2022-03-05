@@ -7,6 +7,7 @@ import ProductImage from '../../components/ProductImage'
 function Product() {
     const { loading, data } = useQuery(QUERY_CATEGORIES)
     const categories = data?.categories || []
+   
     
     const [category,setCategory] = useState("")
    
