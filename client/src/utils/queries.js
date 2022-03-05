@@ -99,3 +99,22 @@ query order($_id:ID!){
   }
 }
 `
+
+export const CARTS = gql`
+query carts{
+  carts{
+    _id
+    firstName
+    lastName
+    email
+    phone
+    carts{
+      _id
+      name
+      image
+      price
+      quantity
+    }
+  }
+}
+`
