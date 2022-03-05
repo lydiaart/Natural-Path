@@ -157,7 +157,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addCart: async (parent, { name, image, price, quanity }, context) => {
+    addCart: async (parent, { name, image, price, quantity }, context) => {
       if (context.user) {
         const cart = await Cart.create({ name, image, price, quantity })
         const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { carts: { _id: cart._id } } })

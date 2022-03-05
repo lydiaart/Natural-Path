@@ -29,6 +29,15 @@ const typeDefs = gql`
     email: String
     phone: String
     orders: [Order]
+    carts: [Cart]
+  }
+
+  type Cart {
+    _id: ID!
+    name: String!
+    image: String
+    price: Float!
+    quantity: Int
   }
 
   type Checkout {
