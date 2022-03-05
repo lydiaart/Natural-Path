@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Cart } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -87,6 +87,15 @@ const resolvers = {
       });
 
       return { session: session.id };
+    },
+    carts: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id).populate({
+          path: 'carts',
+        });
+        return user
+      }
+      throw new AuthenticatonError('Not logged in');
     }
   },
   Mutation: {
@@ -119,9 +128,9 @@ const resolvers = {
     deleteUser: async (parent, args, context) => {
       if (context.user) {
         console.log(args)
-        const result=await User.findByIdAndDelete({_id: context.user._id})
+        const result = await User.findByIdAndDelete({ _id: context.user._id })
 
-        return "" ;
+        return "";
       }
 
       throw new AuthenticationError('Not logged in');
