@@ -169,8 +169,9 @@ const resolvers = {
     },
     removeCart: async (parent, { _id }, context) => {
       if (context.user) {
+        console.log(_id)
         const user = await User.findOneAndUpdate({ _id: context.user._id },
-          { $pull: { carts: { _id } } })
+          { $pull: { carts: _id  } })
 
         return user
 

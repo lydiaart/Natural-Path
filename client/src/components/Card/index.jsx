@@ -1,6 +1,20 @@
 import { Redirect } from "react-router-dom";
+import { ADD_CART } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 function Card({product}) {
+    const [addCart] = useMutation(ADD_CART);
+    const handleAddToCart = async (product) => {
+console.log(product);
+          await addCart({
+             variables:{
+                name: product.name,
+                image: product.image,
+                price: product.price,
+                quantity: 1
+             }
+          })
+    }
     return (
         <>
             <div class="col-md-10 m-3">
@@ -15,7 +29,8 @@ function Card({product}) {
                         <h4 class="card-title" style={{padding:"10px", color:"white"}}>{product.name}</h4>
                         {/* <!--Text--> */}
                         <p class="card-text" style={{padding:"10px", color:"white"}}>{product.description}</p>
-                        <a href="#" class="btn text-white" style={{color:"white", paddingTop:"60px", fontSize:"14px"}}><i class="fa-solid fa-plus" style={{fontSize:"20px"}}></i>Add to cart</a>
+                        <a href="#" class="btn text-white" style={{color:"white", paddingTop:"60px", fontSize:"14px"}} 
+                         onClick={()=>handleAddToCart(product)}><i class="fa-solid fa-plus" style={{fontSize:"20px"}}></i>Add to cart</a>
                     </div>
 
                 </div>
