@@ -1,11 +1,19 @@
 import './index.css';
 import { CARTS } from "../../utils/queries";
-import { useQuery } from "@apollo/client"
+import {REMOVE_CART} from '../../utils/mutations'
+import { useQuery,useMutation } from "@apollo/client"
 
 function Cart() {
     const { loading, data } = useQuery(CARTS)
     const carts = data?.carts.carts || []
-    
+
+    const [removeCart] = useMutation(REMOVE_CART)
+    const handleRemove= async(cart)=>{
+        await removeCart({variables:{
+            _id: cart._id
+        }})
+        window.location.reload()
+    }
     const displayCart = () => {
 
         let uniqueCart = []
@@ -56,7 +64,7 @@ function Cart() {
                         <td className="col-sm-1 col-md-1 text-center"><strong>${cart.price}</strong></td>
                         <td className="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
                         <td className="col-sm-1 col-md-1">
-                            <button type="button" className="btn btn-danger">
+                            <button type="button" className="btn btn-danger" onClick={()=>handleRemove(cart)}>
                                 <span className="glyphicon glyphicon-remove"></span> Remove
                             </button></td>
                     </tr>
@@ -66,6 +74,7 @@ function Cart() {
 
         })
     }
+  
     return (
         <>
             <div className="container m-3">
