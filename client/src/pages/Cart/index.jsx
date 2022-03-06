@@ -86,7 +86,8 @@ function Cart() {
   
     return (
         <>
-        {Auth.loggedIn()? <div className="container m-3">
+        {console.log(newtotal)}
+        {Auth.loggedIn()  ? <div className="container m-3">
                 <div className="row">
                     <div className="col-sm-12 col-md-10 col-md-offset-1">
                         <table className="table table-hover">
