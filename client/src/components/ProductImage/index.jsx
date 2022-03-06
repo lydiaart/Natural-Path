@@ -8,7 +8,7 @@ function ProductImage({ category }) {
     console.log(category, products)
     return (
         <>
-            <div className="container">
+            <div className="container ">
                 <div className="row">
                     {products.length > 0 ? products.map(product => {
                         return (

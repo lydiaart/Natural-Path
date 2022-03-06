@@ -7,6 +7,7 @@ import ProductImage from '../../components/ProductImage'
 function Product() {
     const { loading, data } = useQuery(QUERY_CATEGORIES)
     const categories = data?.categories || []
+   
     
     const [category,setCategory] = useState("")
    
@@ -17,11 +18,10 @@ function Product() {
     
   },[loading])
     
-
-
     return (
         <>
-            <div className="container m-3">
+          <div style={{height: '180vh'}}> 
+            <div className="container m-3 ">
                 <div className="row">
                     <div className="col-md-12">
                         <h2> OnLine <b>Products</b></h2>
@@ -32,6 +32,7 @@ function Product() {
                  
                     </div>
                 </div>
+            </div>
             </div>
         </>
     )
