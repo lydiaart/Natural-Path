@@ -1,0 +1,30 @@
+div#calendar{
+    margin-top:30px;  
+}
+
+.fc-first th {
+    background: #606c38 !important;
+}
+
+.fc-state-down, .fc-state-active {
+    background-color: #606c38 !important;
+}
+
+span.fc-button {
+    border-color: #606c38;
+    color: #606c38;
+}
+.fc-event-inner {
+    background: #606c38!important;
+  
+}
+
+.fc-state-highlight > div > div.fc-day-number {
+    background-color: #81726A !important;
+}
+/*  
+ body {
+    height: 960px;
+    position: relative;
+    z-index: 2;
+} */
