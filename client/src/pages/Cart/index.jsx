@@ -2,10 +2,11 @@ import './index.css';
 import { CARTS } from "../../utils/queries";
 import {REMOVE_CART} from '../../utils/mutations'
 import { useQuery,useMutation } from "@apollo/client"
-
+import {useState} from 'react'
 function Cart() {
     const { loading, data } = useQuery(CARTS)
     const carts = data?.carts.carts || []
+    const [total,setTotal] =useState(1)
 
     const [removeCart] = useMutation(REMOVE_CART)
     const handleRemove= async(cart)=>{
@@ -35,8 +36,10 @@ function Cart() {
 
         let newCart=[]
         let i=0
+        let newtotal=1
         for ( var property in uniqueQty ) {
               if(property===uniqueCart[i].name){
+               // newtotal=newtotal+uniqueCart[i].price * uniqueQty[property]
                  newCart.push({
                      ...uniqueCart[i],
                      quantity: uniqueQty[property]
@@ -45,6 +48,8 @@ function Cart() {
               }   
               i++  
         }
+      
+      //  setTotal(newtotal)
         
         return  newCart.map(cart => {
                  return (
@@ -62,7 +67,7 @@ function Cart() {
                             <input type="text" className="form-control" id="quantity" value={cart.quantity} />
                         </td>
                         <td className="col-sm-1 col-md-1 text-center"><strong>${cart.price}</strong></td>
-                        <td className="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+                        <td className="col-sm-1 col-md-1 text-center"><strong>$ {cart.price*cart.quantity}</strong></td>
                         <td className="col-sm-1 col-md-1">
                             <button type="button" className="btn btn-danger" onClick={()=>handleRemove(cart)}>
                                 <span className="glyphicon glyphicon-remove"></span> Remove
@@ -120,7 +125,7 @@ function Cart() {
                                     <td>   </td>
                                     <td>   </td>
                                     <td><h5>Subtotal</h5></td>
-                                    <td className="text-right"><h5><strong>$24.59</strong></h5></td>
+                                    <td className="text-right"><h5><strong>${total}</strong></h5></td>
                                 </tr>
                                 <tr>
                                     <td>   </td>
@@ -141,7 +146,7 @@ function Cart() {
                                     <td>   </td>
                                     <td>   </td>
                                     <td>
-                                        <button type="button" className="btn btn-default">
+                                        <button type="button" className="btn btn-default" onClick={()=>window.location.href="/product"}>
                                             <span className="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                                         </button></td>
                                     <td>

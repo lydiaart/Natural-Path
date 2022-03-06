@@ -18,8 +18,6 @@ function Product() {
     
   },[loading])
     
-
-
     return (
         <>
           <div style={{height: '180vh'}}> 
