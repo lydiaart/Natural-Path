@@ -1,7 +1,11 @@
 import "./index.css";
 import Auth from "../../utils/auth";
-
+import { CARTS } from "../../utils/queries";
+import { useQuery } from "@apollo/client"
 function Nav() {
+    const { loading, data } = useQuery(CARTS)
+    const carts = data?.carts.carts || []
+    // console.log(carts)
     return (
         <>
             <section id="menu">
@@ -38,7 +42,7 @@ function Nav() {
                                   
                                     {Auth.loggedIn()? ( <>  <li><a href="/profile">Profile</a></li>  <li><a  onClick={()=>Auth.logout()}>Log Out</a></li> </> ):(  <li><a href="/SignUpLogin">My Account</a></li>  )}
                                    
-                                    <li><a href="/cart"><i class="fa-solid fa-cart-plus"></i> (2) Cart</a></li>               
+                                    <li><a href="/cart"><i class="fa-solid fa-cart-plus"></i> ({carts.length}) Cart</a></li>               
                                 </ul>
                                 {/* <!-- / ul --> */}
                             </div>

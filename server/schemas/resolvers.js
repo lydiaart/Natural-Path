@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Cart } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -87,6 +87,15 @@ const resolvers = {
       });
 
       return { session: session.id };
+    },
+    carts: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id).populate({
+          path: 'carts',
+        });
+        return user
+      }
+      throw new AuthenticationError('Not logged in');
     }
   },
   Mutation: {
@@ -115,6 +124,16 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    deleteUser: async (parent, args, context) => {
+      if (context.user) {
+        console.log(args)
+        const result = await User.findByIdAndDelete({ _id: context.user._id })
+
+        return "";
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
@@ -136,7 +155,29 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addCart: async (parent, { name, image, price, quantity }, context) => {
+      if (context.user) {
+        const cart = await Cart.create({ name, image, price, quantity })
+        const user = await User.findOneAndUpdate({ _id: context.user._id }, { $push: { carts: { _id: cart._id } } })
+
+        return user
+
+      }
+      throw new AuthenticationError('Not logged in')
+    },
+    removeCart: async (parent, { _id }, context) => {
+      if (context.user) {
+        console.log(_id)
+        const user = await User.findOneAndUpdate({ _id: context.user._id },
+          { $pull: { carts: _id  } })
+
+        return user
+
+      }
+      throw new AuthenticationError('Not logged in')
     }
+
   }
 };
 
