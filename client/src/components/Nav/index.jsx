@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/client"
 function Nav() {
     const { loading, data } = useQuery(CARTS)
     const carts = data?.carts.carts || []
-    console.log(carts)
+    // console.log(carts)
     return (
         <>
             <section id="menu">

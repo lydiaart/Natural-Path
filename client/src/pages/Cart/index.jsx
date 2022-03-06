@@ -5,48 +5,65 @@ import { useQuery } from "@apollo/client"
 function Cart() {
     const { loading, data } = useQuery(CARTS)
     const carts = data?.carts.carts || []
-    console.log(carts)
+    
     const displayCart = () => {
-       let quantity = 0
-       let previousProduct = ""
 
+        let uniqueCart = []
+        carts.forEach((cart,i) => {
+                    if(uniqueCart.findIndex(obj=> obj.name==cart.name )===-1 ){
+                        uniqueCart.push(cart)
+                    }
+        });
 
-     return   carts.map(cart => {
-               
-        quantity = 0
-              carts.forEach(cartItem=>{
-                  console.log(cart.name, cartItem.name)
-                  if(cart.name.trim()===cartItem.name.trim()){
-                      quantity=quantity + 1
-                  }
-                  else {
-                      quantity=1
-                  }
-              })
+        let uniqueQty={} 
+        carts.forEach((cart,i) => {
+            let count=1
+            carts.forEach((item,i) => {
+                   if(cart.name===item.name){
+                      uniqueQty[cart.name]=count++
+                   }
+            })
+        })
 
-          console.log(quantity)
-            return (
-                <tr>
-                    <td className="col-sm-8 col-md-6">
-                        <div className="media">
-                            <a className="thumbnail pull-left" href="#"> <img className="media-object" src={"/assets/images/background/" + cart.image} style={{ width: "72px", height: "72px" }} /> </a>
-                            <div className="media-body">
-                                <h4 className="media-heading"><a href="#">{cart.name}</a></h4>
-                                {/* <h5 className="media-heading"> by <a href="#">Brand name</a></h5> */}
-                                <span>Status: </span><span className="text-success"><strong>In Stock</strong></span>
-                            </div>
-                        </div></td>
-                    <td className="col-sm-1 col-md-1" style={{ textAlign: "center" }}>
-                        <input type="text" className="form-control" id="quantity" value={quantity} />
-                    </td>
-                    <td className="col-sm-1 col-md-1 text-center"><strong>${cart.price}</strong></td>
-                    <td className="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
-                    <td className="col-sm-1 col-md-1">
-                        <button type="button" className="btn btn-danger">
-                            <span className="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                </tr>
-            )
+        let newCart=[]
+        let i=0
+        for ( var property in uniqueQty ) {
+              if(property===uniqueCart[i].name){
+                 newCart.push({
+                     ...uniqueCart[i],
+                     quantity: uniqueQty[property]
+                 })
+                
+              }   
+              i++  
+        }
+        
+        return  newCart.map(cart => {
+                 return (
+                    <tr>
+                        <td className="col-sm-8 col-md-6">
+                            <div className="media">
+                                <a className="thumbnail pull-left" href="#"> <img className="media-object" src={"/assets/images/background/" + cart.image} style={{ width: "72px", height: "72px" }} /> </a>
+                                <div className="media-body">
+                                    <h4 className="media-heading"><a href="#">{cart.name}</a></h4>
+                                    {/* <h5 className="media-heading"> by <a href="#">Brand name</a></h5> */}
+                                    <span>Status: </span><span className="text-success"><strong>In Stock</strong></span>
+                                </div>
+                            </div></td>
+                        <td className="col-sm-1 col-md-1" style={{ textAlign: "center" }}>
+                            <input type="text" className="form-control" id="quantity" value={cart.quantity} />
+                        </td>
+                        <td className="col-sm-1 col-md-1 text-center"><strong>${cart.price}</strong></td>
+                        <td className="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+                        <td className="col-sm-1 col-md-1">
+                            <button type="button" className="btn btn-danger">
+                                <span className="glyphicon glyphicon-remove"></span> Remove
+                            </button></td>
+                    </tr>
+                )
+            
+            
+
         })
     }
     return (
@@ -65,7 +82,7 @@ function Cart() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {loading ? "loading.." : displayCart() }
+                                {loading ? "loading.." : displayCart()}
 
 
                                 {/* <tr>
