@@ -29,6 +29,7 @@ function Card({ product }) {
                     <div class="card-body">
                         {/* <!--Title--> */}
                         <h4 class="card-title" style={{ padding: "10px", color: "white" }}>{product.name}</h4>
+                        <h5 class="card-title" style={{ padding: "10px", color: "white" }}>${product.price}</h5>
                         {/* <!--Text--> */}
                         <p class="card-text" style={{ padding: "10px", color: "white" }}>{product.description}</p>
                         {Auth.loggedIn()?   <a href="#" class="btn text-white" style={{ color: "white", paddingTop: "60px", fontSize: "14px" }}
