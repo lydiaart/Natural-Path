@@ -3,6 +3,7 @@ import { CARTS } from "../../utils/queries";
 import {REMOVE_CART} from '../../utils/mutations'
 import { useQuery,useMutation } from "@apollo/client"
 import {useState} from 'react'
+import Auth from "../../utils/auth"
 function Cart() {
     const { loading, data } = useQuery(CARTS)
     const carts = data?.carts.carts || []
@@ -82,7 +83,7 @@ function Cart() {
   
     return (
         <>
-            <div className="container m-3">
+        {Auth.loggedIn()? <div className="container m-3">
                 <div className="row">
                     <div className="col-sm-12 col-md-10 col-md-offset-1">
                         <table className="table table-hover">
@@ -158,7 +159,8 @@ function Cart() {
                         </table>
                     </div>
                 </div>
-            </div>
+            </div>:""}
+           
         </>
     )
 }
