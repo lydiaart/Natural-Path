@@ -43,43 +43,46 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div className="App">
-     
-      <Router>
-      <Nav />
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/services" >
-          <Service />
-        </Route>
-        <Route exact path="/contact">
-          <Contact />
-        </Route>
-        <Route exact path="/signuplogin">
-        <MyAccount />
-        </Route>
-        <Route exact path="/scheduler">
-          <Scheduler />
-        </Route>
-        <Route exact path="/profile">
-          <Profile />
-        </Route>
-        <Route exact path="/cart">
-          <Cart />
-        </Route>
-        <Route exact path="/product">
-          <Product />
-        </Route>
-        <Route exact path="/editprofile">
-          <EditProfile />
-        </Route>
-      </Router>
-      <Footer />
-    </div>
+      <div className="App">
+        <Nav />
+      
+          <Router>
+
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/services" >
+              <Service />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+            <Route exact path="/signuplogin">
+              <MyAccount />
+            </Route>
+            <Route exact path="/scheduler">
+              <Scheduler />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+            <Route exact path="/product">
+              <Product />
+            </Route>
+            <Route exact path="/editprofile">
+              <EditProfile />
+            </Route>
+          </Router>
+
+      
+        <Footer />
+      </div>
     </ApolloProvider>
   );
 }

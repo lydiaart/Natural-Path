@@ -22,7 +22,8 @@ function Product() {
 
     return (
         <>
-            <div className="container m-3">
+          <div style={{height: '180vh'}}> 
+            <div className="container m-3 ">
                 <div className="row">
                     <div className="col-md-12">
                         <h2> OnLine <b>Products</b></h2>
@@ -33,6 +34,7 @@ function Product() {
                  
                     </div>
                 </div>
+            </div>
             </div>
         </>
     )
