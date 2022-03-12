@@ -1,15 +1,25 @@
 import './index.css';
 import { CARTS } from "../../utils/queries";
-import {REMOVE_CART} from '../../utils/mutations'
-import { useQuery,useMutation } from "@apollo/client"
- 
-import Auth from "../../utils/auth"
+import {REMOVE_CART} from '../../utils/mutations';
+import { useQuery,useMutation } from "@apollo/client";
+import { loadStripe } from '@stripe/stripe-js';
+import Auth from "../../utils/auth";
+import { useLazyQuery } from '@apollo/client';
+import { useState } from 'react';
+
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+
 function Cart() {
+    const [selectedCart, setSelectedCart] = useState ([])
     const { loading, data } = useQuery(CARTS)
     const carts = data?.carts.carts || []
     
 
     const [removeCart] = useMutation(REMOVE_CART)
+    const handleCheckout = () => {
+        
+    }
     const handleRemove= async(cart)=>{
         await removeCart({variables:{
             _id: cart._id
@@ -52,8 +62,14 @@ function Cart() {
               i++  
         }
       console.log(newtotal)
+      setSelectedCart(newCart)
       // setTotal(newtotal)
-      sum=newtotal+6.94
+      if (newCart.length > 0) {
+        sum=newtotal+6.94
+      }
+    else {
+        sum=0
+    }
         
         return  newCart.map(cart => {
                  return (
@@ -87,7 +103,7 @@ function Cart() {
     return (
         <>
         {console.log(newtotal)}
-        {Auth.loggedIn()  ? <div className="container m-3">
+        {Auth.loggedIn() && sum > 0  ? <div className="container m-3">
                 <div className="row">
                     <div className="col-sm-12 col-md-10 col-md-offset-1">
                         <table className="table table-hover">
@@ -135,7 +151,7 @@ function Cart() {
                                             <span className="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                                         </button></td>
                                     <td>
-                                        <button type="button" className="btn btn-success">
+                                        <button type="button" className="btn btn-success" onClick={handleCheckout}>
                                             Checkout <span className="glyphicon glyphicon-play"></span>
                                         </button></td>
                                 </tr>
